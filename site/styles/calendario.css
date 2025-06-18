@@ -1,0 +1,419 @@
+/* =========================
+   RESET BÁSICO
+========================= */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   VARIÁVEIS GLOBAIS
+========================= */
+:root {
+    --primary-color: #0d6efd;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --bg-light: #f8f9fa;
+    --text-dark: #212529;
+    --calendar-bg: #ffffff;
+    --day-hover: #e7f1ff;
+    --available-day: #d1e7dd;
+    --available-day-border: #0f5132;
+    --disabled-day: #f0f0f0;
+    --today-highlight: #cfe2ff;
+}
+
+/* =========================
+   ESTILO GERAL
+========================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    padding: 20px;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* =========================
+   CALENDÁRIO FULLCALENDAR
+========================= */
+#calendar {
+    max-width: 850px;
+    margin: 0 auto;
+    font-size: 1rem;
+    background-color: var(--calendar-bg);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25),
+        0 15px 40px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+#calendar:hover {
+    transform: translateY(-6px);
+}
+
+.fc-toolbar-chunk {
+    flex: 1 1 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fc-toolbar-title {
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    text-transform: capitalize;
+}
+
+.fc-button {
+    background-color: var(--primary-color);
+    border: none;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    font-size: 1rem;
+    white-space: nowrap;
+    min-width: 70px;
+    margin: 4px 2px;
+}
+
+.fc-button:hover,
+.fc-button:focus {
+    background-color: #0b5ed7;
+    outline: none;
+    box-shadow: 0 0 8px var(--primary-color);
+}
+
+.fc-daygrid-day-number {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    padding: 8px 8px 0 8px;
+}
+
+.fc-day-today {
+    background-color: var(--today-highlight) !important;
+    border-radius: 10px;
+}
+
+.fc-daygrid-day-frame {
+    min-height: 70px;
+    padding: 8px;
+    position: relative;
+}
+
+.dia-disponivel {
+    background-color: var(--available-day) !important;
+    border: 2px solid var(--available-day-border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.15s ease;
+    position: relative;
+}
+
+.dia-disponivel:hover {
+    background-color: #b4d7c4 !important;
+    transform: scale(1.07);
+    box-shadow: 0 6px 12px rgba(15, 81, 50, 0.35);
+}
+
+.icone-disponivel {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    color: var(--available-day-border);
+    font-size: 1.3rem;
+}
+
+.fc-day-disabled,
+.fc-past:not(.dia-disponivel) {
+    opacity: 0.45;
+    pointer-events: none;
+    background-color: var(--disabled-day) !important;
+    border-radius: 12px;
+}
+
+.fc-day-disabled:hover,
+.fc-past:not(.dia-disponivel):hover {
+    background-color: var(--disabled-day) !important;
+    transform: none;
+    cursor: not-allowed;
+}
+
+/* =========================
+   MENSAGENS
+========================= */
+#mensagem {
+    max-width: 850px;
+    margin: 20px auto 40px;
+    font-size: 1.1rem;
+    transition: opacity 0.4s ease-in-out;
+    word-wrap: break-word;
+}
+
+/* =========================
+   MODAL
+========================= */
+.modal-content {
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.modal-title {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    word-break: break-word;
+}
+
+.modal-body select {
+    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1.5px solid #ced4da;
+    transition: border-color 0.3s ease;
+    width: 100%;
+}
+
+.modal-body select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 6px var(--primary-color);
+}
+
+/* =========================
+   BOTÕES
+========================= */
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 28px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+    min-width: 150px;
+    text-align: center;
+    margin: 10px auto 0 auto;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #0b5ed7;
+    outline: none;
+    box-shadow: 0 0 12px var(--primary-color);
+}
+
+/* =========================
+   RESPONSIVIDADE MELHORADA
+========================= */
+
+/* Tablets médios a pequenos (<= 992px) */
+@media (max-width: 992px) {
+    #calendar {
+        max-width: 95%;
+        padding: 15px;
+        font-size: 0.95rem;
+    }
+
+    .fc-toolbar-title {
+        font-size: 1.3rem;
+    }
+
+    .fc-button {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+        min-width: 60px;
+    }
+
+    .fc-daygrid-day-frame {
+        min-height: 60px;
+        padding: 6px;
+    }
+
+    #mensagem {
+        max-width: 95%;
+        font-size: 1rem;
+    }
+
+    .modal-title {
+        font-size: 1.2rem;
+    }
+
+    .modal-body select {
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        padding: 10px 24px;
+        font-size: 1rem;
+        min-width: 130px;
+    }
+}
+
+/* Celulares grandes (<= 768px) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    #calendar {
+        max-width: 100%;
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .fc-toolbar-title {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .fc-button {
+        padding: 5px 10px;
+        font-size: 0.85rem;
+        min-width: 50px;
+        margin: 3px 2px;
+    }
+
+    .fc-daygrid-day-number {
+        font-size: 0.85rem;
+        padding: 5px 5px 0 5px;
+    }
+
+    .fc-daygrid-day-frame {
+        min-height: 50px;
+        padding: 4px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        min-width: auto;
+        margin-top: 8px;
+    }
+
+    #mensagem {
+        font-size: 1rem;
+        margin: 12px 0 20px;
+    }
+
+    .modal-title {
+        font-size: 1.1rem;
+    }
+
+    .modal-body select {
+        font-size: 0.95rem;
+    }
+}
+
+/* Celulares pequenos (<= 576px) */
+@media (max-width: 576px) {
+    body {
+        padding: 8px 6px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    #calendar {
+        padding: 10px 6px;
+        font-size: 0.85rem;
+    }
+
+    .fc-toolbar-title {
+        font-size: 1rem;
+    }
+
+    .fc-button {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+        min-width: 45px;
+        margin: 2px 1px;
+    }
+
+    .fc-daygrid-day-number {
+        font-size: 0.8rem;
+        padding: 4px 4px 0 4px;
+    }
+
+    .fc-daygrid-day-frame {
+        min-height: 45px;
+        padding: 3px;
+    }
+
+    .btn-primary {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    #mensagem {
+        font-size: 0.95rem;
+        margin: 10px 0 15px;
+    }
+
+    .modal-title {
+        font-size: 1rem;
+    }
+
+    .modal-body select {
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra small (<= 400px) */
+@media (max-width: 400px) {
+    #calendar {
+        padding: 8px 4px;
+        font-size: 0.8rem;
+    }
+
+    .fc-button {
+        padding: 3px 6px;
+        font-size: 0.75rem;
+        min-width: 40px;
+    }
+
+    .fc-toolbar-title {
+        font-size: 0.9rem;
+    }
+
+    .fc-daygrid-day-number {
+        font-size: 0.75rem;
+    }
+
+    .btn-primary {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .modal-title {
+        font-size: 0.95rem;
+    }
+}

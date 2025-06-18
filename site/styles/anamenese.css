@@ -1,0 +1,145 @@
+/* Reset básico */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+    line-height: 1.6;
+    padding: 1rem;
+}
+
+/* Container principal */
+main.container {
+    max-width: 720px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+}
+
+/* Títulos */
+h1,
+h2.h4 {
+    color: #004494;
+    /* azul */
+    font-weight: 700;
+}
+
+h1 small {
+    font-weight: 400;
+    color: #6c757d;
+}
+
+h2.h4 {
+    border-bottom: 2px solid #004494;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+/* Labels */
+label.form-label {
+    font-weight: 600;
+    color: #222;
+}
+
+/* Inputs e selects */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.45rem 0.7rem;
+    border: 1.8px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+    font-family: inherit;
+    resize: vertical;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #004494;
+    box-shadow: 0 0 5px rgba(0, 68, 148, 0.5);
+}
+
+/* Placeholders */
+::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+/* Checkbox e radios */
+.form-check-label {
+    cursor: pointer;
+    user-select: none;
+    font-weight: 500;
+    color: #222;
+}
+
+.form-check-input:focus {
+    outline-offset: 2px;
+    outline: 2px solid #004494;
+}
+
+/* Botão */
+button[type="submit"] {
+    background-color: #004494;
+    border: none;
+    color: white;
+    padding: 0.75rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    background-color: #002f6c;
+    outline: none;
+}
+
+/* Mensagem sucesso */
+#mensagem {
+    font-weight: 600;
+    color: #155724;
+    background-color: #d4edda;
+    border: 1.5px solid #c3e6cb;
+    border-radius: 5px;
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+}
+
+/* Marcação de campos obrigatórios */
+.text-danger {
+    font-weight: 700;
+    margin-left: 0.15rem;
+}
+
+/* Responsividade */
+@media (max-width: 576px) {
+    main.container {
+        padding: 1.5rem 1rem;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.65rem;
+    }
+}

@@ -1,0 +1,295 @@
+/* ==========================
+   RESET GLOBAL E BASE
+========================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+  line-height: 1.5;
+  min-height: 100vh;
+
+  /* Espaço para topbar (100px) + submenu (50px aprox) fixos no topo */
+  padding-top: 150px;
+}
+
+/* ==========================
+   IMAGENS E LINKS
+========================== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+a {
+  text-decoration: none;
+  color: #004494;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #ffc107;
+  text-decoration: underline;
+}
+
+/* ==========================
+   TOPBAR FIXA
+========================== */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  /* manter altura original */
+  background-color: #004494;
+  z-index: 1100;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.logo-topbar {
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ==========================
+   SUBMENU FIXO
+========================== */
+.submenu {
+  position: fixed;
+  top: 100px;
+  /* fica abaixo da topbar */
+  left: 0;
+  right: 0;
+  height: 50px;
+  /* altura aproximada do submenu */
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  border-radius: 0 0 10px 10px;
+  z-index: 1099;
+  margin-bottom: 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ajuste no container do submenu para centralizar conteúdo */
+.submenu .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Links do submenu */
+.submenu .nav-link {
+  color: #004494;
+  font-weight: 600;
+  padding: 10px 15px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.submenu .nav-link:hover,
+.submenu .nav-link:focus {
+  color: #ffc107;
+  background-color: rgba(0, 68, 148, 0.1);
+  border-radius: 5px;
+}
+
+.submenu .dropdown-menu {
+  border-radius: 8px;
+  border: 1px solid #004494;
+  box-shadow: 0 4px 15px rgba(0, 68, 148, 0.2);
+}
+
+.submenu .dropdown-item {
+  color: #004494;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.submenu .dropdown-item:hover,
+.submenu .dropdown-item:focus {
+  background-color: #004494;
+  color: #fff;
+  border-radius: 5px;
+} 
+
+/* ==========================
+   CARROSSEL
+========================== */
+.carousel {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.carousel .carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 15px 20px;
+  bottom: 20px;
+  max-width: 300px;
+  left: 20px;
+  text-align: left;
+}
+
+.carousel-caption h5 {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.carousel-caption p {
+  font-size: 1rem;
+  margin-top: 4px;
+  color: #ffd54f;
+}
+
+/* ==========================
+   SEÇÕES PRINCIPAIS
+========================== */
+section.container {
+  background-color: #fff;
+  padding: 30px 25px;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgb(0 0 0 / 0.1);
+}
+
+/* Emergency Section */
+.emergency-section h2 {
+  color: #004494;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.emergency-section hr {
+  border-color: #004494;
+  opacity: 0.3;
+  margin-bottom: 20px;
+}
+
+.emergency-section p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Odontology Section */
+.odontology-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+
+  margin: 0;
+}
+
+.odontology-section h2 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #004494;
+  
+}
+
+.odontology-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  color: #343a40;
+}
+
+.odontology-list li i {
+  color: #ffc107;
+  font-size: 1.3rem;
+}
+
+/* ==========================
+   RODAPÉ
+========================== */
+.footer-lacomt {
+  background-color: #004494;
+  padding: 30px 20px 15px;
+  margin-top: 60px;
+  border-radius: 15px 15px 0 0;
+}
+
+.footer-lacomt h5,
+.footer-lacomt h6 {
+  color: #ffc107;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.footer-lacomt a {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.footer-lacomt a:hover,
+.footer-lacomt a:focus {
+  color: #ffc107;
+  text-decoration: underline;
+}
+
+.footer-lacomt address {
+  font-style: normal;
+  margin-bottom: 10px;
+}
+
+.footer-lacomt .bi {
+  font-size: 1.3rem;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+.footer-lacomt hr {
+  border-color: #ffc107;
+  opacity: 0.3;
+  margin: 20px 0;
+}
+
+.footer-lacomt .text-center {
+  font-size: 0.9rem;
+}
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+@media (max-width: 992px) {
+  .odontology-content .row>div {
+    margin-bottom: 20px;
+  }
+
+  .carousel .carousel-caption {
+    max-width: 100%;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .submenu .navbar-nav {
+    text-align: center;
+  }
+
+  .odontology-content ul li {
+    font-size: 0.95rem;
+  }
+
+  .footer-lacomt {
+    text-align: center;
+  }
+}
